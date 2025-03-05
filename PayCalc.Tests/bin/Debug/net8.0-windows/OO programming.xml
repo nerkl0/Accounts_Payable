@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OO programming</name>
+    </assembly>
+    <members>
+        <member name="T:OO_programming.Employee">
+            <summary>
+            Employee class that holds data on employees
+            </summary>
+        </member>
+        <member name="M:OO_programming.Employee.ToString">
+            <summary>
+            Overides ToString method
+            </summary>
+            <returns>formatted string with targeted information</returns>
+        </member>
+        <member name="M:OO_programming.NumberOutsideOfRange.#ctor">
+            <summary>
+            Returns exception for CalcTax in the Threshold Calculator if 
+            the file values don't align within the if statement
+            </summary>
+        </member>
+        <member name="T:OO_programming.FileHandling">
+            <summary>
+            Designated class for filehandling
+            </summary>
+        </member>
+        <member name="M:OO_programming.FileHandling.LoadEmployee(System.String)">
+            <summary>
+            Loads Employee data from the Employee CSV file
+            </summary>
+            <param name="filePath">file path of the Employee CSV file</param>
+            <returns>A list of the contents of Employee file</returns>
+        </member>
+        <member name="M:OO_programming.FileHandling.LoadTaxData(System.String)">
+            <summary>
+            Tailored to load the threshold data from the respective csv files
+            </summary>
+            <param name="filePath">path of the requested csv file</param>
+            <returns>a list of the file data</returns>
+        </member>
+        <member name="M:OO_programming.FileHandling.Save(System.Collections.Generic.List{System.String})">
+            <summary>
+            Saves the employee pay summary to a csv file 
+            </summary>
+            <param name="empData">a list of the data to parse</param>
+        </member>
+        <member name="F:OO_programming.Form1.employeeData">
+            <summary>
+            sets up a local employee list variable to store the employee data
+            and list for saving the generated employee data
+            </summary>
+        </member>
+        <member name="M:OO_programming.Form1.btnSave_Click(System.Object,System.EventArgs)">
+            <summary>
+            Saves employee data to a csv file
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:OO_programming.Form1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OO_programming.Form1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OO_programming.Form1.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OO_programming.PayCalculator">
+            <summary>
+            Class for storing calculations for generating pay summary
+            net, gross, tax, super
+            </summary>
+        </member>
+        <member name="F:OO_programming.PayCalculator._superRate">
+            field storing the current 2023 - 2024 Australian Super rate
+        </member>
+        <member name="M:OO_programming.PayCalculator.#ctor(OO_programming.Employee,System.Double)">
+            <summary>
+            Set up of PayCalculator Constructor 
+            </summary>
+            <param name="emp">assigns the employee information</param>
+            <param name="hours">assigns the hours that were input on the form</param>
+        </member>
+        <member name="M:OO_programming.PayCalculator.CalculateTax(System.Boolean)">
+            <summary>
+            If the boolean value passed through is yes, the CalculateTax function will 
+            read and return the tax rates for employees claiming the tax free threshold.
+            If false, returns rates for employees not claiming the threshold
+            </summary>
+            <param name="threshold">Boolean value based on the employees threshold claim</param>
+            <returns>calculation for correct employeetax</returns>
+        </member>
+        <member name="M:OO_programming.PayCalculator.GeneratePaySummary">
+            <summary>
+            Public method to return pay summary for an employee
+            </summary>
+            <returns>tuple for the gross pay, tax paid, net pay and super contribution</returns>
+        </member>
+        <member name="T:OO_programming.PaySlip">
+            <summary>
+            Class to assist with the generation of the payslip with all relevant data
+            </summary>
+        </member>
+        <member name="M:OO_programming.PaySlip.#ctor(OO_programming.Employee,System.Double)">
+            <summary>
+            Constructor storing the employee payslip summary. Generates a random week number, and today's date. 
+            tax threshold returns a Yes or No string for better readability in the text box
+            invokes the PayCalculator class to store the pay summary details before sending to the form
+            </summary>
+            <param name="emp">Employee that was selected for pay generation</param>
+            <param name="submittedHours">the hours that were submitted for that employee</param>
+        </member>
+        <member name="M:OO_programming.PaySlip.SaveInformation">
+            <summary>
+            Stores the data generated to assist in saving to the csv file
+            </summary>
+            <returns>List of generated data</returns>
+        </member>
+        <member name="M:OO_programming.PaySlip.ToString">
+            <summary>
+            Overrides the ToString method to return a formatted pay summary for the text box
+            </summary>
+            <returns>formatted pay summary</returns>
+        </member>
+        <member name="M:OO_programming.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:OO_programming.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:OO_programming.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:OO_programming.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:OO_programming.ThresholdCalculator">
+            <summary>
+            Class for returning the tax calculated using the correct tax thresholds
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:OO_programming.ThresholdCalculator.CalcTax(System.String,System.Double)" -->
+    </members>
+</doc>
